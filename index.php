@@ -18,8 +18,20 @@
             $login = '<a class="nav-link" href="loguit.php">Loguit</a>';
         }
     }
+    $ulvl = $_SESSION['user-lvl'];
 
+    // verifieer lvl van persoon (admin lvl req)
+    if ( $ulvl == "2") {
+    //site here
+    
+    
+    }
+    //Normal
+    else{
+
+    } 
 ?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -103,7 +115,17 @@
                             <td><?= $row['location']; ?></td> 
                             <td>
                                 <a href="index.php?edit=<?= $row['id']; ?>" class="btn btn-info">Edit</a>
-                                <a href="process.php?delete=<?= $row['id']; ?>" class="btn btn-danger">Delete</a>
+                                <?php 
+                                    // verifieer lvl van persoon (admin lvl req)
+                                    if ( $ulvl == "2") {
+                                        //site here
+                                          ?>
+                                          <a href="process.php?delete=<?= $row['id']; ?>" class="btn btn-danger">Delete</a>
+                                        <?php } 
+                                       //level 1 
+                                        else { 
+                                        } 
+                                ?>
                             </td>
                         </tr>
 
