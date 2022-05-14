@@ -37,6 +37,10 @@ if (isset($_GET['delete'])) {
     header("location: features.php");
 }
 
+//Laat een gebruiker / record zien wanneer je op edit klikt
+// $row name etc. moet nog worden veranderd 
+// (bijvoorbeeld) $email = $row['email']; & $password = $row['wachtwoord']
+//Edit knop
 if (isset($_GET['edit'])) {
     $id = $_GET['edit']; 
     $update = true; 
@@ -49,6 +53,9 @@ if (isset($_GET['edit'])) {
     }
 }
 
+//Update een gebruiker / record
+// $row name etc. moet nog worden veranderd 
+// (bijvoorbeeld) $email = $row['email']; & $password = $row['wachtwoord']
 if (isset($_POST['update'])) { 
     $id = $_POST['id'];
     $name = $_POST['name']; 
