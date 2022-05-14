@@ -33,6 +33,8 @@ if (isset($_GET['delete'])) {
     header("location: index.php");
 }
 
+//Laat een gebruiker / record zien wanneer je op edit klikt
+//Edit knop
 if (isset($_GET['edit'])) {
     $id = $_GET['edit']; 
     $update = true; 
@@ -45,6 +47,8 @@ if (isset($_GET['edit'])) {
     }
 }
 
+
+//Update een gebruiker / Record
 if (isset($_POST['update'])) { 
     $id = $_POST['id'];
     $name = $_POST['name']; 
