@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <?php 
 	session_start();
+    // To only give access to a page if a user is logged in  
+
+    // if(!isset($_SESSION['username'])){
+    //     header("Location: login.php");
+    // } else { 
+      
+    // }
+
+    //Login / Loguit systeem
     if(!isset($_SESSION['username']))
     {
         $login = '<a class="nav-link" href="login.php">Login</a>';
@@ -123,7 +132,8 @@
                                           <a href="process.php?delete=<?= $row['id']; ?>" class="btn btn-danger">Delete</a>
                                         <?php } 
                                        //level 1 
-                                        else { 
+                                        else{
+                                            
                                         } 
                                 ?>
                             </td>
