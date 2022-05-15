@@ -1,5 +1,6 @@
 <?php 
 session_start();
+ //Login / Loguit systeem
 if(!isset($_SESSION['username']))
 {
     $login = '<a class="nav-link" href="login.php">Login</a>';
@@ -101,15 +102,22 @@ if (isset($_SESSION['message'])): ?>
             <input type="hidden" name="id" value="<?= $id; ?>">
             <div class="form-group"> 
                 <label>Email</label>
-                <input type="text" name="email" class="form-control" value="<?= $email; ?>" placeholder="Enter your email"> 
+                <input type="text" name="email" pattern=".+@test.nl" class="form-control" value="<?= $email; ?>" placeholder="Enter your email" required> 
             </div> 
             <div class="form-group">
                 <label>Naam</label>
-                <input type="text" name="name" class="form-control" value="<?= $name; ?>" placeholder="Enter your name"> 
+                <input type="text" name="name" class="form-control" value="<?= $name; ?>" placeholder="Enter your name" required> 
             </div>
             <div class="form-group">
                 <label>Wachtwoord</label>
-                <input type="text" name="password" class="form-control" value="<?= $password; ?>" placeholder="Enter your password"> 
+                <input type="text" name="password" class="form-control" value="<?= $password; ?>" placeholder="Enter your password" required> 
+            </div>
+            <div class="form-group">
+                <label>User level</label>
+                <select id="level" name="level" required> 
+                    <option value="1">User</option>
+                    <option value="2">Admin</option>
+                </select> 
             </div>
             <div class="form-group button">
                 <!-- verander de knop van Save naar Update  -->
