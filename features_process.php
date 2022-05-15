@@ -16,8 +16,9 @@ if (isset($_POST['save'])) {
     $email = $_POST['email'];
     $name = $_POST['name'];
     $password = md5($_POST['password']);
+    $level  = $_POST['level'];
 
-    $mysqli->query("INSERT INTO Users (email, naam, wachtwoord) VALUES('$email', '$name', '$password')") or 
+    $mysqli->query("INSERT INTO Users (email, naam, wachtwoord, level) VALUES('$email', '$name', '$password', '$level')") or 
         die($mysqli->error);
 
     $_SESSION['message'] = "Record has been saved!";
