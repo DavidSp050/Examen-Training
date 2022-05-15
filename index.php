@@ -26,8 +26,15 @@
         {
             $login = '<a class="nav-link" href="loguit.php">Loguit</a>';
         }
+        
+        else if ($_SESSION['user-lvl'] <= 1)
+        {
+            $login = '<a class="nav-link" href="loguit.php">Loguit</a>';
+        }
+
     }
     $ulvl = $_SESSION['user-lvl'];
+    $userID   = $_SESSION['userID'];
 
     // verifieer lvl van persoon (admin lvl req)
     if ( $ulvl == "2") {
@@ -123,7 +130,11 @@
                             <td><?= $row['name']; ?></td> 
                             <td><?= $row['location']; ?></td> 
                             <td>
-                                <a href="index.php?edit=<?= $row['id']; ?>" class="btn btn-info">Edit</a>
+                                <?php if( $userID == $row['userID'] || $ulvl == "2" ) { ?>
+                                    <a href="index.php?edit=<?= $row['id']; ?>" class="btn btn-info">Edit</a>
+
+                                    <?php } else { } ?>
+
                                 <?php 
                                     // verifieer lvl van persoon (admin lvl req)
                                     if ( $ulvl == "2") {
