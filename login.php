@@ -6,6 +6,9 @@ wachtwoord: admin
 naam: Gebruiker
 wachtwoord: user
 
+email: 84228@test.nl
+wachtwoord: test
+
 -->
 
 <?php
